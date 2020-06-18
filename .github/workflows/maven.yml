@@ -23,7 +23,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Copy to Staging
-      run: mkdir staging && cp target/*.jar staging
+      run: mkdir staging && find -type f -name "*.?ar" -exec cp {} staging \;
     - name: Upload the build output
       uses: actions/upload-artifact@v1
       with:
