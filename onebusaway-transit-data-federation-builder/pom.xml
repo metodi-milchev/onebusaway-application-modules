@@ -5,6 +5,11 @@
     <groupId>org.onebusaway</groupId>
     <version>2.0.0</version>
   </parent>
+
+  <properties>
+    <geotools.version>11-beta</geotools.version>
+  </properties>
+
   <artifactId>onebusaway-transit-data-federation-builder</artifactId>
 
 	<name>onebusaway-transit-data-federation-builder</name>
@@ -51,6 +56,24 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-api</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-epsg-hsql</artifactId>
+			<version>${geotools.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>hsqldb</artifactId>
+					<groupId>hsqldb</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 
 		<dependency>
 			<groupId>commons-cli</groupId>
